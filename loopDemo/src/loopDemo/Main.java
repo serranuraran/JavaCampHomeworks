@@ -17,15 +17,24 @@ public class Main {
 		int i = 1;
 		while (i < 10) {
 			System.out.println("i = " + i);
-			i++;  //sayacýn artýþýný belirtmeliyiz, aksi halde sonsuz döngüye girer
+			i++; // sayacýn artýþýný belirtmeliyiz, aksi halde sonsuz döngüye girer
 		}
-		
-		 //eðer ki tek sayýlarý yazdýrmak isteseydim
+
+		// eðer ki tek sayýlarý yazdýrmak isteseydim
 		int j = 1;
 		while (j < 10) {
 			System.out.println("j = " + j);
-			j+=2;  //sayacýn artýþýný belirtmeliyiz, aksi halde sonsuz döngüye girer
+			j += 2; // sayacýn artýþýný belirtmeliyiz, aksi halde sonsuz döngüye girer
 		}
 		System.out.println("While Döngüsü Bitti");
+
+		// Do While Döngüsü
+		int x = 1;
+		do {
+			System.out.println("x = " + x);
+			x += 2;
+		} while (x < 10);
+		System.out.println("Do-While Döngüsü Bitti");
+		
 	}
 }
