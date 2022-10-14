@@ -2,7 +2,7 @@
 
 Select * from Customers where City='London'        --şehri londra olanları getir..metinler tek tırnakla
 
---case insensitive küçük büyük harf duyarsız
+--case insensitive küçük büyük harf duyarsız 
 sElEcT * from Products where CategoryID=1 or CategoryID=3
 
 sElEcT * from Products where CategoryID=1 and UnitPrice<>10       --10dan farklı olanları getir demek <>
