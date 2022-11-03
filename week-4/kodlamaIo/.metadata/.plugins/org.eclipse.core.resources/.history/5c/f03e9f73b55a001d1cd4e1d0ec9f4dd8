@@ -1,0 +1,9 @@
+package kodlamaIo.Devs.dataAccess.abstracts;
+
+import java.util.List;
+
+import kodlamaIo.Devs.entities.concretes.Language;
+
+public interface LanguageRepository {
+	List<Language> getAll();
+}

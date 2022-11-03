@@ -1,0 +1,22 @@
+package kodlamaIo.Devs.business.concretes;
+
+import java.util.List;
+
+import kodlamaIo.Devs.business.abstracts.LanguageService;
+import kodlamaIo.Devs.dataAccess.abstracts.LanguageRepository;
+import kodlamaIo.Devs.entities.concretes.Language;
+
+public class LanguageManager implements LanguageService{
+	private LanguageRepository languageRepository;
+
+	public LanguageManager(LanguageRepository languageRepository) {
+		
+		this.languageRepository = languageRepository;
+	}
+	
+	public List<Language> getAll() {
+		
+		return languageRepository.getAll();
+	}
+	
+}

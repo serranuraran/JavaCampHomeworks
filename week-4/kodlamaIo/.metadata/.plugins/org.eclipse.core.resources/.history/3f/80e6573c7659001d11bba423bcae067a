@@ -1,0 +1,7 @@
+package kodlamaIo.Devs.business.abstracts;
+
+import antlr.collections.List;
+
+public interface LanguageService {
+	List<Language> getAll();
+}

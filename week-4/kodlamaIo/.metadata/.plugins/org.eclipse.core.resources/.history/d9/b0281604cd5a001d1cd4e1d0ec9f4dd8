@@ -1,0 +1,92 @@
+package kodlamaIo.Devs.business.concretes;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import kodlamaIo.Devs.business.abstracts.LanguageService;
+import kodlamaIo.Devs.dataAccess.abstracts.LanguageRepository;
+import kodlamaIo.Devs.entities.concretes.Language;
+
+@Service
+public class LanguageManager implements LanguageService{
+	private LanguageRepository languageRepository;
+
+	public LanguageManager(LanguageRepository languageRepository) {
+		
+		this.languageRepository = languageRepository;
+	}
+
+	@Override
+	public List<Language> getAll() {
+		// TODO Auto-generated method stub
+		return languageRepository.getAll();
+	}
+
+	@Override
+	public Language getById(int id) throws Exception {
+		if(!isIdExist(id)) {
+			throw new Exception("İd bulunamadı.");
+		}
+		return languageRepository.getById(id);
+	}
+
+	@Override
+	public void add(Language language) throws Exception {
+		if (this.isValid(language)) {
+            this.languageRepository.add(language);
+        }
+    }
+	@Override
+	public void delete(int id) throws Exception {
+		if(!isIdExist(id)) {
+			throw new Exception("İd bulunamadı.");
+		}
+		languageRepository.delete(id);
+		
+	}
+
+	@Override
+	public void update(Language language) throws Exception {
+		if(this.isValid(programmingLanguage)) {
+            this.programmingLanguageRepository.update(programmingLanguage);
+       }
+    }		
+	
+	public boolean isIdExist(int id)throws Exception{
+		for(Language lang : getAll()) {
+			if(lang.getId()==id) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isNameValid(String language)throws Exception{
+		if(language.isBlank()) {
+			throw new Exception("Bu isim alanı boş geçilemez.");
+		}
+		for(Language language2 : getAll()) {
+			if(language2.getName().equalsIgnoreCase(language)) {
+				throw new Exception("Bu isim kullanılmış.");
+			}
+		}
+		return true;
+	}
+
+
+	@Override
+	public void update(Language language) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(LanguageManager languageManager) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+

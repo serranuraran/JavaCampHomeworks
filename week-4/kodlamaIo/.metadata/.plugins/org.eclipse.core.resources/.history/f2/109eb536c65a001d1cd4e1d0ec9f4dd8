@@ -1,0 +1,65 @@
+package kodlamaIo.Devs.business.concretes;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import kodlamaIo.Devs.business.abstracts.LanguageService;
+import kodlamaIo.Devs.dataAccess.abstracts.LanguageRepository;
+import kodlamaIo.Devs.entities.concretes.Language;
+
+@Service
+public class LanguageManager implements LanguageService{
+	private LanguageRepository languageRepository;
+
+	@Autowired
+	public LanguageManager(LanguageRepository languageRepository) {
+		
+		this.languageRepository = languageRepository;
+	}
+
+	@Override
+	public List<Language> getAll() {
+		// TODO Auto-generated method stub
+		return languageRepository.getAll();
+	}
+
+	@Override
+	public Language getById(int id) throws Exception {
+		if(!isIdExist(id)) {
+			throw new Exception("İd bulunamadı.");
+		}
+		return languageRepository.getById(id);
+	}
+
+	@Override
+	public void add(Language language) throws Exception {
+		if(isIdExist(language.getId())) {
+			throw new Exception("Id önceden kayıt edilmiştir.");
+		}
+		if(isNameValid(language.getName())) {
+			languageRepository.add(language);
+		}
+			}
+
+	@Override
+	public void delete(int id) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Language language, int id) throws Exception {
+		if(!isIdExist(id)) {
+			throw new Exception("İd bulunamadı.");
+		}
+		if(isNameValid(language.getName())) {
+			languageRepository.update(id, language);
+		}
+	}
+	
+
+
+}

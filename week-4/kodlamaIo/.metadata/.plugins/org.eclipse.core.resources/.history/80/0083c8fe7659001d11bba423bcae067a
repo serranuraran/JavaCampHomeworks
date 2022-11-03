@@ -1,0 +1,5 @@
+package kodlamaIo.Devs.dataAccess.abstracts;
+
+public interface LanguageRepository {
+	List<Language> getAll();
+}

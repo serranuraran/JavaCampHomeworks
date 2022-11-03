@@ -1,0 +1,5 @@
+package kodlamaIo.Devs.webApi.controllers;
+
+public class LanguagesController {
+
+}

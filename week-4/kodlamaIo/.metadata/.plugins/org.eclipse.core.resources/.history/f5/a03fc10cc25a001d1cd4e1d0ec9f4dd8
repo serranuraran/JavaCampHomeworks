@@ -1,0 +1,76 @@
+package kodlamaIo.Devs.business.concretes;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kodlamaIo.Devs.business.abstracts.LanguageService;
+import kodlamaIo.Devs.dataAccess.abstracts.LanguageRepository;
+import kodlamaIo.Devs.entities.concretes.Language;
+
+@Service
+public class LanguageManager implements LanguageService{
+	private LanguageRepository languageRepository;
+
+	public LanguageManager(LanguageRepository languageRepository) {
+		
+		this.languageRepository = languageRepository;
+	}
+	private boolean isNameExist(Language pLanguage) throws Exception {
+		for (Language language1 : languageRepository.getAll()) {
+			if (language1.getName().equals(pLanguage.getName())) {
+				return true;
+			}
+			if (pLanguage.getName().isEmpty()) {
+				throw new Exception("Kurs ismi boş geçilemez.");
+			}
+		}
+		return false;
+
+	}
+
+	private boolean isIdExist(int id) {
+		for (Language pLanguage2 : languageRepository.getAll()) {
+			if (pLanguage2.getId() == id) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+	
+
+	@Override
+	public List<Language> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Language getById(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(Language language) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Language language, int id) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+
+}

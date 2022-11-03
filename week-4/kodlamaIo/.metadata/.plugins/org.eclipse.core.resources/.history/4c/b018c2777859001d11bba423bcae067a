@@ -1,0 +1,9 @@
+package kodlamaIo.Devs.business.abstracts;
+
+import java.util.List;
+
+import kodlamaIo.Devs.entities.concretes.Language;
+
+public interface LanguageService {
+	List<Language> getAll();
+}

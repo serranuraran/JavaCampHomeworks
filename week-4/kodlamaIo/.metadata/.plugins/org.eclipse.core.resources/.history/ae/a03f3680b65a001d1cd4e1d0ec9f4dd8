@@ -1,0 +1,32 @@
+package kodlamaIo.Devs.webApi.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import kodlamaIo.Devs.business.abstracts.LanguageService;
+import kodlamaIo.Devs.entities.concretes.Language;
+
+@RestController
+@RequestMapping("/api/languages")
+public class LanguagesController {
+	private LanguageService languageService;
+
+	@Autowired
+	public LanguagesController(LanguageService languageService) {
+		
+		this.languageService = languageService;
+	}
+
+	@GetMapping("/getall")
+	public List<Language> getAll() {
+		return languageService.getAll();
+	}
+	
+	@DeleteMapping("/delete")
+	public void delete
+}

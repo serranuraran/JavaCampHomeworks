@@ -1,0 +1,29 @@
+package kodlamaIo.Devs.dataAccess.concretes;
+
+import java.util.List;
+
+import kodlamaIo.Devs.dataAccess.abstracts.LanguageRepository;
+import kodlamaIo.Devs.entities.concretes.Language;
+
+public class InMemoryLanguageRepository implements LanguageRepository{
+
+	List<Language> languages;
+	
+	
+	public InMemoryLanguageRepository() {
+		languages=new ArrayList<LAnguage>();
+		languages.add(new Language(1,"Python"));
+		languages.add(new Language(1,"Python"));
+		languages.add(new Language(1,"Python"));
+		languages.add(new Language(1,"Python"));
+	}
+
+
+
+	@Override
+	public List<Language> getAll() {
+		
+		return languages;
+	}
+
+}

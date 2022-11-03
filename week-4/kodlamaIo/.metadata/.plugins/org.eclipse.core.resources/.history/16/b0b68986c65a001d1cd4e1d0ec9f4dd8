@@ -1,0 +1,18 @@
+package kodlamaIo.Devs.business.abstracts;
+
+import java.util.List;
+
+import kodlamaIo.Devs.entities.concretes.Language;
+
+public interface LanguageService {
+	
+	List<Language> getAll();
+	
+	Language getById(int id) throws Exception;
+	
+	Language add(Language language) throws Exception;
+	void delete(int id) throws Exception;
+	void update(Language language, int id) throws Exception;
+	
+
+}
